@@ -7,26 +7,26 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 )
 
-var SchemaGroupVersion = schema.GroupVersion{
+var SchemeGroupVersion = schema.GroupVersion{
 	Group:   samplecrd.GroupName,
 	Version: samplecrd.Version,
 }
 
 func Resource(resource string) schema.GroupResource {
-	return SchemaGroupVersion.WithResource(resource).GroupResource()
+	return SchemeGroupVersion.WithResource(resource).GroupResource()
 }
 
 func Kind(kind string) schema.GroupKind {
-	return SchemaGroupVersion.WithKind(kind).GroupKind()
+	return SchemeGroupVersion.WithKind(kind).GroupKind()
 }
 
 func addKnownTypes(schema *runtime.Scheme) error {
 	schema.AddKnownTypes(
-		SchemaGroupVersion,
+		SchemeGroupVersion,
 		&Network{},
 		&NetworkList{},
 	)
 
-	metav1.AddToGroupVersion(schema, SchemaGroupVersion)
+	metav1.AddToGroupVersion(schema, SchemeGroupVersion)
 	return nil
 }

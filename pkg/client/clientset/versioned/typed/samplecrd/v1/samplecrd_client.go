@@ -15,7 +15,7 @@ type SamplecrdV1Interface interface {
 	NetworksGetter
 }
 
-// SamplecrdV1Client is used to interact with features provided by the samplecrd group.
+// SamplecrdV1Client is used to interact with features provided by the samplecrd.example.io group.
 type SamplecrdV1Client struct {
 	restClient rest.Interface
 }
