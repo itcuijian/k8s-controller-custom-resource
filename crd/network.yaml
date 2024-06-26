@@ -6,6 +6,16 @@ spec:
   group: samplecrd.example.io
   versions:
     - name: v1
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              cidr:
+                type: string
+              gateway:
+                type: string
   names:
     kind: Network
     plural: networks
