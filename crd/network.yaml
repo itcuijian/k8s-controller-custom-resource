@@ -12,10 +12,11 @@ spec:
           properties:
             spec:
               type: object
-              cidr:
-                type: string
-              gateway:
-                type: string
+              properties:
+                cidr:
+                  type: string
+                gateway:
+                  type: string
   names:
     kind: Network
     plural: networks
