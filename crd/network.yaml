@@ -1,4 +1,4 @@
-apiVersion: apiextensions.k8s.io/v1
+apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
   name: networks.samplecrd.example.io
@@ -6,17 +6,16 @@ spec:
   group: samplecrd.example.io
   versions:
     - name: v1
-      schema:
-        openAPIV3Schema:
-          type: object
-          properties:
-            spec:
-              type: object
-              properties:
-                cidr:
-                  type: string
-                gateway:
-                  type: string
+      served: true
+      storage: true
+  validation:
+    openAPIV3Schema:
+      type: object
+      properties:
+        cidr:
+          type: string
+        gateway:
+          type: string
   names:
     kind: Network
     plural: networks
