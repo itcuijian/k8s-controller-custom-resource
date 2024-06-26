@@ -4,7 +4,8 @@ metadata:
   name: networks.samplecrd.example.io
 spec:
   group: samplecrd.example.io
-  version: v1
+  versions:
+    - name: v1
   names:
     kind: Network
     plural: networks
