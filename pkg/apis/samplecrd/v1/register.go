@@ -12,6 +12,11 @@ var SchemeGroupVersion = schema.GroupVersion{
 	Version: samplecrd.Version,
 }
 
+var (
+	SchemeBuilder = runtime.NewSchemeBuilder(addKnownTypes)
+	AddToScheme   = SchemeBuilder.AddToScheme
+)
+
 func Resource(resource string) schema.GroupResource {
 	return SchemeGroupVersion.WithResource(resource).GroupResource()
 }
